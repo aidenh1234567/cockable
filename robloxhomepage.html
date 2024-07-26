@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .header h2 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .logout-btn {
+        padding: 10px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .logout-btn:hover {
+        background-color: #e53935;
+    }
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .nav-item {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .nav-item:hover {
+        background-color: #45a049;
+    }
+    .gallery {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+        margin-bottom: 20px;
+    }
+    .gallery-item {
+        flex: 0 0 auto;
+        width: 160px;
+        height: 90px;
+        margin-right: 10px;
+        scroll-snap-align: start;
+        background-color: #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .gallery-item:last-child {
+        margin-right: 0;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>Welcome User</h2>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <div class="navigation">
+        <a href="https://example.com/avatar" target="_blank" class="nav-item">Avatar</a>
+        <a href="https://example.com/marketplace" target="_blank" class="nav-item">Marketplace</a>
+        <a href="https://example.com/buy-premium" target="_blank" class="nav-item">Buy Premium</a>
+        <a href="https://example.com/buy-tokens" target="_blank" class="nav-item">Buy Tokens</a>
+        <a href="https://example.com/events" target="_blank" class="nav-item">Events</a>
+    </div>
+    <div class="gallery">
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+    </div>
+</div>
+
+<script>
+    // Functionality for scrolling gallery using arrow keys
+    const gallery = document.querySelector('.gallery');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let currentIndex = 0;
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowRight') {
+            currentIndex = Math.min(currentIndex + 1, galleryItems.length - 1);
+            gallery.scrollTo({
+                left: galleryItems[currentIndex].offsetLeft,
+                behavior: 'smooth'
+            });
+        } else if (event.key === 'ArrowLeft') {
+            currentIndex = Math.max(currentIndex - 1, 0);
+            gallery.scrollTo({
+                left: galleryItems[currentIndex].offsetLeft,
+                behavior: 'smooth'
+            });
+        }
+    });
+
+    function logout() {
+        // Here you would typically perform logout actions such as clearing session, cookies, etc.
+        // This is just a basic example to demonstrate the logout action
+        alert('Logged out successfully!');
+        // Example: redirect to login page
+        window.location.href = '/login'; // Replace with your actual login page URL
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login and Sign Up</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group input {
+        width: calc(100% - 20px);
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form-group input:focus {
+        outline: none;
+        border-color: #4CAF50;
+    }
+    .form-group button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .form-group button:hover {
+        background-color: #45a049;
+    }
+    .form-group a {
+        color: #4CAF50;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <div class="form-group">
+        <input type="text" placeholder="Username" id="username">
+    </div>
+    <div class="form-group">
+        <input type="password" placeholder="Password" id="password">
+    </div>
+    <div class="form-group">
+        <button onclick="login()">Login</button>
+    </div>
+    <div class="form-group">
+        <p>Don't have an account? <a href="#">Sign Up</a></p>
+    </div>
+</div>
+
+<script>
+    function login() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        // Here you would typically send these values to your backend for authentication
+        // This is just a basic example to demonstrate the frontend structure
+        console.log('Username:', username);
+        console.log('Password:', password);
+        // Example: send to backend using fetch or AJAX
+        // fetch('/login', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({ username: username, password: password })
+        // }).then(response => response.json())
+        //   .then(data => console.log(data))
+        //   .catch(error => console.error('Error:', error));
+    }
+</script>
+
+</body>
+</html>

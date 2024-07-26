@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avatar Marketplace</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .header h2 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .nav-btn {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .nav-btn:hover {
+        background-color: #45a049;
+    }
+    .sort-btn {
+        padding: 10px 20px;
+        background-color: #008CBA;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .sort-btn:hover {
+        background-color: #0073aa;
+    }
+    .logout-btn {
+        padding: 10px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .logout-btn:hover {
+        background-color: #e53935;
+    }
+    .home-btn {
+        padding: 10px;
+        background-color: #2196F3;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .home-btn:hover {
+        background-color: #1e87db;
+    }
+    .marketplace {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 10px;
+        margin-top: 20px;
+    }
+    .item {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+        border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div>
+            <button class="home-btn">Home</button>
+        </div>
+        <h2>Avatar Marketplace</h2>
+        <div>
+            <button class="sort-btn" onclick="sortLowToHigh()">Sort Price Low to High</button>
+            <button class="sort-btn" onclick="sortHighToLow()">Sort Price High to Low</button>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+    <div class="navigation">
+        <a href="#" class="nav-btn">Hat</a>
+        <a href="#" class="nav-btn">Face</a>
+        <a href="#" class="nav-btn">Shirt</a>
+        <a href="#" class="nav-btn">Pants</a>
+        <a href="#" class="nav-btn">Accessories</a>
+        <a href="#" class="nav-btn">Tools</a>
+    </div>
+    <div class="marketplace">
+        <!-- Example squares for marketplace items -->
+        <!-- Generating 50 squares for demonstration -->
+        <!-- Replace with actual marketplace items or dynamic generation -->
+        <!-- You can use JavaScript to generate these dynamically -->
+        <!-- Example: -->
+        <!-- <script>
+             const marketplace = document.querySelector('.marketplace');
+             for (let i = 0; i < 50; i++) {
+                 const item = document.createElement('div');
+                 item.classList.add('item');
+                 marketplace.appendChild(item);
+             }
+         </script> -->
+        <!-- End of JavaScript example -->
+        
+        <!-- Manual generation of squares for demonstration -->
+        <!-- Replace with JavaScript generation in a real application -->
+        <div class="item"></div>
+        <div class="item"></div>
+        <!-- Repeat more items as needed -->
+        <!-- Example: -->
+        <!-- <div class="item"></div> -->
+    </div>
+</div>
+
+<script>
+    // Function for logout action
+    function logout() {
+        // Replace with actual logout functionality
+        alert('Logged out successfully!');
+        // Example: redirect to login page
+        window.location.href = '/login'; // Replace with your actual login page URL
+    }
+
+    // Function to sort items by price low to high
+    function sortLowToHigh() {
+        // Replace with actual sorting logic
+        alert('Sorting by price low to high');
+        // Example: perform sorting operations
+    }
+
+    // Function to sort items by price high to low
+    function sortHighToLow() {
+        // Replace with actual sorting logic
+        alert('Sorting by price high to low');
+        // Example: perform sorting operations
+    }
+</script>
+
+</body>
+</html>

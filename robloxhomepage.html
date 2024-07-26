@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to the Home Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .header h2 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .logout-btn {
+        padding: 10px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .logout-btn:hover {
+        background-color: #e53935;
+    }
+    .username {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .nav-btn {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .nav-btn:hover {
+        background-color: #45a049;
+    }
+    .rectangle-container {
+        display: flex;
+        overflow-x: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .rectangle {
+        width: 150px;
+        height: 100px;
+        background-color: #ccc;
+        margin-right: 10px;
+        border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>Welcome to the Home Page</h2>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <div class="username" id="usernameDisplay"></div>
+    <div class="navigation">
+        <a href="#" class="nav-btn">Avatar</a>
+        <a href="#" class="nav-btn">Marketplace</a>
+        <a href="#" class="nav-btn">Buy Premium</a>
+        <a href="#" class="nav-btn">Buy Tokens</a>
+        <a href="#" class="nav-btn">Events</a>
+    </div>
+    <div class="rectangle-container">
+        <!-- Example rectangles for navigation -->
+        <!-- You can add more rectangles as needed -->
+        <div class="rectangle"></div>
+        <div class="rectangle"></div>
+        <div class="rectangle"></div>
+        <div class="rectangle"></div>
+        <div class="rectangle"></div>
+    </div>
+</div>
+
+<script>
+    // Function to get user data from localStorage and display username
+    document.addEventListener('DOMContentLoaded', function() {
+        var userData = JSON.parse(localStorage.getItem('userData'));
+        if (userData) {
+            document.getElementById('usernameDisplay').textContent = 'Welcome, ' + userData.username;
+        } else {
+            // Redirect to login page if no user data found (for security)
+            window.location.href = 'login.html';
+        }
+    });
+
+    // Function for logout action
+    function logout() {
+        // Clear user data from localStorage
+        localStorage.removeItem('userData');
+        // Redirect to login page
+        window.location.href = 'login.html';
+    }
+</script>
+
+</body>
+</html>

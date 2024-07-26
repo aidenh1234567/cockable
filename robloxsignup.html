@@ -44,6 +44,14 @@
     .form-group button:hover {
         background-color: #45a049;
     }
+    .login-account {
+        margin-top: 10px;
+        text-align: center;
+    }
+    .login-account a {
+        color: #4CAF50;
+        text-decoration: none;
+    }
 </style>
 </head>
 <body>
@@ -51,7 +59,7 @@
     <h2>Sign Up</h2>
     <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username">
+        <input type="text" id="username" placeholder="Enter your desired username">
     </div>
     <div class="form-group">
         <label for="email">Email</label>
@@ -63,6 +71,9 @@
     </div>
     <div class="form-group">
         <button onclick="signup()">Sign Up</button>
+    </div>
+    <div class="login-account">
+        <p>Already have an account? <a href="login.html">Click here to log in</a></p>
     </div>
 </div>
 
@@ -87,7 +98,7 @@
         };
         localStorage.setItem('userData', JSON.stringify(userData));
 
-        // Redirect to home page
+        // Redirect to home page or another URL upon successful sign-up
         window.location.href = 'home.html';
     }
 </script>
